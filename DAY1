@@ -1,0 +1,56 @@
+from tkinter import *
+root = Tk()
+
+root.geometry("765x345")
+# FUNCTION
+def getvals():
+    print("THANKS FOR JOINING")
+
+
+
+# TEXT FOR OUR FORM
+Label(root, text="WELCOME TO MY SCHOOL",font="comicsansms 13 bold",pady=15).grid(row =0,column=3)
+name = Label(root, text="NAME")
+phone = Label(root, text="PHONE NO.")
+sex = Label(root, text="GENDER")
+emer = Label(root, text="EMERGENCY")
+paymentmode = Label(root, text="PAYMENT MODE")
+# PACK TEXT FORM
+name.grid(row=1, column=2)
+phone.grid(row=2, column=2)
+sex.grid(row=3, column=2)
+emer.grid(row=4, column=2)
+paymentmode.grid(row=5, column=2)
+# TKINDER VARIABLES FOR STORING ENTERIES
+namevalue = StringVar()
+phonevalue = StringVar()
+sexvalue = StringVar()
+emervalue = StringVar()
+paymentmodevalue = StringVar()
+foodservicevalue = IntVar()
+
+#ENTRY FOR A FORM
+
+nameentry = Entry(root, textvariable=namevalue)
+phoneentry = Entry(root, textvariable=phonevalue)
+sexentry = Entry(root, textvariable=sexvalue)
+emerentry = Entry(root, textvariable=emervalue)
+paymentmodeentry = Entry(root, textvariable=paymentmodevalue)
+
+#PACKING FOR FORM
+
+nameentry.grid(row=1 , column=3)
+phoneentry.grid(row=2 ,column=3)
+sexentry.grid(row= 3, column=3)
+emerentry.grid(row=4 , column=3)
+paymentmodeentry.grid(row= 5, column=3)
+
+#CHECK BOX AND PACKING
+foodservice = Checkbutton(text="WANT TO PREBOOK YOUR ADMISSION")
+foodservice.grid(row=6, column=3)
+
+#BUTTON & PACKING IT AND ASSIGNING IT A COMMAND
+Button(text="SUBMIT TO MY SCHOOL", command=getvals()).grid(row=7, column=3)
+
+root.mainloop()
+
