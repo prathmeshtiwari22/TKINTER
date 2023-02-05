@@ -1,0 +1,29 @@
+from tkinter import *
+
+root = Tk()
+
+canvas_width = 800
+canvas_height = 400
+
+root.geometry(f"{canvas_width}x{canvas_height}")
+root.title("LEARNING PHASE")
+can_widget = Canvas(root, width=canvas_width, height=canvas_height)
+can_widget.pack()
+
+
+#line goes from the point x1,y1  to x2,y2
+#can_widget.create_line(0,0,800,200 ,fill="yellow")
+#can_widget.create_line(0,200,800,0,fill="yellow")
+#to create a rectangle specifiy parameters in this order - coors of top left and botton right
+
+can_widget.create_rectangle(3,5,700,300,fill="red")
+
+can_widget.create_text(200,200, text="HELLLO PETER",fill="white")
+#create oval and coor of rect
+can_widget.create_oval(344,233,244,355,fill="white")
+photo=PhotoImage(file="image.png")
+can_widget.create_image(50,50,image=photo)
+
+
+
+root.mainloop()
