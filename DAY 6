@@ -1,0 +1,57 @@
+from tkinter import *
+root =Tk()
+root.geometry("785x345")
+root.title("NOTEPAD")
+
+def myfunc():
+    print("HELLO GUYS")
+
+
+# USE THESE TO CREATE NON DROPDOWN MENU
+
+#mymenu = Menu(root)
+#mymenu.add_command(label="File",command=myfunc)
+#mymenu.add_command(label="Quit",command=quit)
+#root.config(menu=mymenu)
+mainmenu = Menu(root)
+
+
+m1 = Menu(mainmenu,tearoff=0)
+m1.add_command(label="New project",command=myfunc)
+m1.add_command(label="Save",command=myfunc)
+m1.add_separator()
+m1.add_command(label="Save As",command=myfunc)
+m1.add_command(label="Print",command=myfunc)
+root.config(menu=mainmenu)
+mainmenu.add_cascade(label="File",menu=m1)
+
+
+m2 = Menu(mainmenu,tearoff=0)
+m2.add_command(label="Undo",command=myfunc)
+m2.add_command(label="Redo",command=myfunc)
+m2.add_separator()
+m2.add_command(label="Cut",command=myfunc)
+m2.add_command(label="Copy",command=myfunc)
+m2.add_command(label="Paste",command=myfunc)
+m2.add_command(label="Delete",command=myfunc())
+root.config(menu=mainmenu)
+mainmenu.add_cascade(label="Edit",menu=m2)
+
+
+m3 = Menu(mainmenu,tearoff=0)
+m3.add_command(label="Text sizw",command=myfunc)
+m3.add_command(label="Font",command=myfunc)
+root.config(menu=mainmenu)
+mainmenu.add_cascade(label="Insert",menu=m3)
+
+
+m4 = Menu(mainmenu,tearoff=0)
+m4.add_command(label="Foreground color",command=myfunc)
+m4.add_command(label="Background color",command=myfunc)
+root.config(menu=mainmenu)
+mainmenu.add_cascade(label="Colors",menu=m4)
+
+
+
+
+root.mainloop()
